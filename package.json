@@ -1,0 +1,17 @@
+{
+  "name": "@liquid-labs/shell-toolkit",
+  "version": "1.0.0-alpha.0",
+  "description": "",
+  "main": "dist/shell-toolkit.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Zane Rockenbaugh <zane@liquid-labs.com>",
+  "license": "UNLICENSED",
+  "repository": "git+ssh://git@github.com/liquid-labs/shell-toolkit.git",
+  "bugs": {
+    "url": "https://github.com/liquid-labs/shell-toolkit/issues"
+  },
+  "homepage": "https://github.com/liquid-labs/shell-toolkit#readme"
+}

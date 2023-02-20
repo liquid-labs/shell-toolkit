@@ -6,7 +6,7 @@ const tryExec = (cmd, { httpStatus = 500, msg = '', msgFunc, noThrow = false } =
   if (result.code !== 0 && noThrow !== true) {
     if (msg.length > 0) msg += ' '
     if (msgFunc !== undefined) msg += msgFunc(result) + ' '
-    
+
     throw createError(httpStatus, msg + `Failed to execute '${cmd}'; stderr: ${result.stderr}`)
   }
 

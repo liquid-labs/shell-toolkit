@@ -1,0 +1,19 @@
+PASS test-staging/test/try-exec.test.js
+  tryExec
+    ✓ 'echo foo' succeeds and outputs 'foo' (131 ms)
+    ✓ uses 'msg' in as excepton message (132 ms)
+    ✓ makes result available to msgFunc (116 ms)
+    ✓ reflects command in exception message (110 ms)
+    ✓ 'noThrow=true' supresses the throw on error behavior (110 ms)
+
+--------------|---------|----------|---------|---------|-------------------
+File          | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+--------------|---------|----------|---------|---------|-------------------
+All files     |     100 |      100 |     100 |     100 |                   
+ try-exec.mjs |     100 |      100 |     100 |     100 |                   
+--------------|---------|----------|---------|---------|-------------------
+Test Suites: 1 passed, 1 total
+Tests:       5 passed, 5 total
+Snapshots:   0 total
+Time:        0.886 s, estimated 1 s
+Ran all test suites matching /.\/test-staging/i.

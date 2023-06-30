@@ -1,12 +1,11 @@
 import shell from 'shelljs'
 
-const tryExec = (cmd, { msg = '', msgFunc, noThrow = false, ...shellOpts } = {}) => {
-  const result = shell.exec(cmd, { silent : true, ...shellOpts })
-  if (result.code !== 0 && noThrow !== true) {
-    if (msg.length > 0) msg += ' '
-    if (msgFunc !== undefined) msg += msgFunc(result) + ' '
+import { errorMsg } from './lib/error-msg'
 
-    throw new Error(msg + `Failed to execute '${cmd}'; stderr: ${result.stderr}`)
+const tryExec = (cmd, { noThrow = false, ...opts } = {}) => {
+  const result = shell.exec(cmd, { silent : true, ...opts })
+  if (result.code !== 0 && noThrow !== true) {
+    throw new Error(errorMsg({ cmd, result, ...opts }))
   }
 
   return result

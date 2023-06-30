@@ -1,4 +1,3 @@
-import createError from 'http-errors'
 import shell from 'shelljs'
 
 const tryExec = (cmd, { httpStatus = 500, msg = '', msgFunc, noThrow = false, ...shellOpts } = {}) => {
@@ -7,7 +6,7 @@ const tryExec = (cmd, { httpStatus = 500, msg = '', msgFunc, noThrow = false, ..
     if (msg.length > 0) msg += ' '
     if (msgFunc !== undefined) msg += msgFunc(result) + ' '
 
-    throw createError(httpStatus, msg + `Failed to execute '${cmd}'; stderr: ${result.stderr}`)
+    throw new Error(httpStatus, msg + `Failed to execute '${cmd}'; stderr: ${result.stderr}`)
   }
 
   return result

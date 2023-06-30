@@ -39,7 +39,6 @@ describe('tryExecAsync', () => {
     }
   })
 
-
   test("'noThrow=true' supresses the throw on error behavior", async() => {
     const result = await tryExecAsync('blahblahblah', { noThrow : true })
     expect(result.code).not.toBe(0)

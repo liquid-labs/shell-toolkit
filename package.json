@@ -11,6 +11,9 @@
     "preversion": "npm run qa",
     "qa": "make qa"
   },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "keywords": [],
   "author": "Zane Rockenbaugh <zane@liquid-labs.com>",
   "license": "UNLICENSED",
@@ -19,14 +22,14 @@
     "url": "https://github.com/liquid-labs/shell-toolkit/issues"
   },
   "homepage": "https://github.com/liquid-labs/shell-toolkit#readme",
-  "devDependencies": {
-    "@liquid-labs/catalyst-scripts": "^1.0.0-alpha.57"
-  },
   "dependencies": {
     "shelljs": "^0.8.5"
   },
   "liq": {
     "packageType": "node|lib",
     "tags": []
+  },
+  "devDependencies": {
+    "@liquid-labs/catalyst-scripts-node-project": "^1.0.0-alpha.20"
   }
 }

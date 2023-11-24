@@ -1,0 +1,19 @@
+Test git rev: 2d7a6cf1964fd686714e8592f149bd88005096ab
+PASS test/try-exec.test.js
+PASS test/try-exec-async.test.js
+---------------------|---------|----------|---------|---------|-------------------
+File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------------|---------|----------|---------|---------|-------------------
+All files            |     100 |      100 |     100 |     100 |                   
+ src                 |     100 |      100 |     100 |     100 |                   
+  try-exec-async.mjs |     100 |      100 |     100 |     100 |                   
+  try-exec.mjs       |     100 |      100 |     100 |     100 |                   
+ src/lib             |     100 |      100 |     100 |     100 |                   
+  error-msg.mjs      |     100 |      100 |     100 |     100 |                   
+---------------------|---------|----------|---------|---------|-------------------
+
+Test Suites: 2 passed, 2 total
+Tests:       10 passed, 10 total
+Snapshots:   0 total
+Time:        0.395 s, estimated 1 s
+Ran all test suites.

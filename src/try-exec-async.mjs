@@ -24,7 +24,7 @@ import { errorMsg } from './lib/error-msg'
  * @param opts (object) - 'msg' and 'msgFunc' (which gets the results) may be used to specify or generate messages on failure. Any other opts are passed to shelljs.exec and then the notiv exec (see doc references)
  * @returns {String.<Promise>} - Resolves with the command results from `stdout`
  */
-const tryExecAsync = (cmd, { noThrow, silent = false, ...opts } = {}) => {
+const tryExecAsync = (cmd, { noThrow, silent = true, ...opts } = {}) => {
   return new Promise(function(resolve, reject) {
     // Execute the command, reject if we exit non-zero (i.e. error)
     shell.exec(cmd, { silent, ...opts }, function(code, stdout, stderr) {

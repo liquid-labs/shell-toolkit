@@ -24,10 +24,10 @@ import { errorMsg } from './lib/error-msg'
  * @param opts (object) - 'msg' and 'msgFunc' (which gets the results) may be used to specify or generate messages on failure. Any other opts are passed to shelljs.exec and then the notiv exec (see doc references)
  * @returns {String.<Promise>} - Resolves with the command results from `stdout`
  */
-const tryExecAsync = (cmd, { noThrow, ...opts } = {}) => {
+const tryExecAsync = (cmd, { noThrow, silent = false, ...opts } = {}) => {
   return new Promise(function(resolve, reject) {
     // Execute the command, reject if we exit non-zero (i.e. error)
-    shell.exec(cmd, { silent : true, ...opts }, function(code, stdout, stderr) {
+    shell.exec(cmd, { silent, ...opts }, function(code, stdout, stderr) {
       const result = new String(stdout) // eslint-disable-line no-new-wrappers
       result.code = code
       result.stderr = stderr

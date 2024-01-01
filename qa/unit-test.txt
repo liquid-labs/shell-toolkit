@@ -1,0 +1,24 @@
+Test git rev: 245c87f3e77351458db70ace7371e4d243546807
+PASS test/try-exec.test.js
+/bin/sh: blahblahblah: command not found
+/bin/sh: blahblahblah: command not found
+/bin/sh: blahblahblah: command not found
+/bin/sh: blahblahblah: command not found
+PASS test/try-exec-async.test.js
+---------------------|---------|----------|---------|---------|-------------------
+File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------------|---------|----------|---------|---------|-------------------
+All files            |     100 |      100 |     100 |     100 |                   
+ src                 |     100 |      100 |     100 |     100 |                   
+  try-exec-async.mjs |     100 |      100 |     100 |     100 |                   
+  try-exec.mjs       |     100 |      100 |     100 |     100 |                   
+ src/lib             |     100 |      100 |     100 |     100 |                   
+  error-msg.mjs      |     100 |      100 |     100 |     100 |                   
+---------------------|---------|----------|---------|---------|-------------------
+
+Test Suites: 2 passed, 2 total
+Tests:       10 passed, 10 total
+Snapshots:   0 total
+Time:        0.406 s, estimated 1 s
+Ran all test suites.
+foo

@@ -1,7 +1,10 @@
-const errorMsg = ({ cmd, msg = '', msgFunc, result, stderr }) => {
+const errorMsg = ({ msg = '', msgFunc, noSummary, result }) => {
   if (msg.length > 0) msg += ' '
-  if (msgFunc !== undefined) msg += msgFunc(result) + ' '
-  msg += `Failed to execute '${cmd}' (${result.code}); stderr: ${result.stderr}; stdout: ${result.stdout}`
+  if (msgFunc !== undefined) msg += msgFunc(result)
+  if (noSummary !== true) {
+    if (msg.length > 0) msg += ' '
+    msg += `Failed to execute ${result.summary}.`
+  }
 
   return msg
 }

@@ -1,0 +1,9 @@
+Test git rev: 09937ca163a6008687c71b95543997b4f9b7d3c7
+
+/Users/zane/playground/liquid-labs/shell-toolkit/src/try-exec-async.mjs
+  31:40  error  Missing space after key 'async'  key-spacing
+  39:8   error  Trailing spaces not allowed      no-trailing-spaces
+
+✖ 2 problems (2 errors, 0 warnings)
+  2 errors and 0 warnings potentially fixable with the `--fix` option.
+

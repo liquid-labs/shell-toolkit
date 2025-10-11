@@ -1,6 +1,7 @@
 import shell from 'shelljs'
 
 import { errorMsg } from './lib/error-msg'
+import { resultSummary } from './lib/result-summary'
 
 /**
  * Asynchronously executes a shell command and returns a promise that resolves to the output string, with `code`,
@@ -10,6 +11,12 @@ import { errorMsg } from './lib/error-msg'
  * @param {string} cmd - The shell command to execute.
  * @param {Object} [opts] - Exec options.
  * @param {string} [opts.cwd] - An absolute path string specifying the working directory for the command.
+ * @param {string} [opts.msg] - A massage to include in any error message. The final error message is:
+ * '[[msg] msgFunc(result) ]'${cmd}' (${result.code}); stderr: ${result.stderr}; stdout: ${result.stdout})'.
+ * @param {Function} [opts.msgFunc] - A function that takes the exec result and returns a string to include in any
+ * error message. See `opts.msg` for final error message format.
+ * @param {boolean} [opts.noSummary=false] - If `true`, the `'${cmd}' (code: ...)` part of the error message will be
+ * omitted.
  * @param {boolean} [opts.noThrow=false] - If `true`, the promise will not be rejected if the command exits with a
  * non-zero code.
  * @param {string} [opts.shell='sh'] - The path to the shell to use to execute the command.
@@ -33,9 +40,10 @@ const tryExecAsync = (cmd, { noThrow, silent = true, ...opts } = {}) => {
       result.code = code
       result.stderr = stderr
       result.stdout = stdout
+      result.summary = resultSummary({ cmd, result })
 
       if (code !== 0 && noThrow !== true) {
-        return reject(new Error(errorMsg({ cmd, result, ...opts })))
+        return reject(new Error(errorMsg({ ...opts, result })))
       }
 
       return resolve(result)

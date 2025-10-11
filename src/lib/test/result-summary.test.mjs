@@ -1,3 +1,4 @@
+/* global describe expect test */
 import { resultSummary } from '../result-summary'
 
 describe('resultSummary', () => {

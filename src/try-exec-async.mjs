@@ -28,7 +28,7 @@ import { errorMsg } from './lib/error-msg'
 const tryExecAsync = (cmd, { noThrow, silent = true, ...opts } = {}) => {
   return new Promise(function(resolve, reject) {
     // Execute the command, reject if we exit non-zero (i.e. error)
-    shell.exec(cmd, { silent, ...opts, async: true }, function(code, stdout, stderr) {
+    shell.exec(cmd, { silent, ...opts, async : true }, function(code, stdout, stderr) {
       const result = new String(stdout) // eslint-disable-line no-new-wrappers
       result.code = code
       result.stderr = stderr
@@ -36,7 +36,7 @@ const tryExecAsync = (cmd, { noThrow, silent = true, ...opts } = {}) => {
 
       if (code !== 0 && noThrow !== true) {
         return reject(new Error(errorMsg({ cmd, result, ...opts })))
-      }  
+      }
 
       return resolve(result)
     })
